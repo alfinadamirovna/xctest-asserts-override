@@ -224,16 +224,3 @@ private func performAssert(_ description: String, _ block: () -> Void) {
         block()
     }
 }
-
-// MARK: Soft Assertation
-
-    /// Set `continueAfterFailure` by default. (`false`)
-    func setDefaultContinueAfterFailure() {
-        self.continueAfterFailure = false
-    }
-
-    func softAssertation(_ block: () throws -> Void) rethrows {
-        self.continueAfterFailure = true
-        try block()
-        self.setDefaultContinueAfterFailure()
-    }
