@@ -4,7 +4,7 @@
   
   ### Simple Asserts
   
-  1. Simple boolean check
+  1. Simple boolean checks
   
   
   ```
@@ -17,7 +17,7 @@
       .expressionFalse(!expression)
   ```
   
-  2. Simple not nil/nil check
+  2. Simple nil/not nil checks
 
 ```
  let expression = { nil }
@@ -31,7 +31,7 @@
   
   ### Comparable asserts
   
-  1. Equals/Not equals
+  1. Equals/Not equals checks
 
 ```
   let a = "start"
@@ -46,7 +46,7 @@
       .notEqualsTo(b)
   ```
   
-  2. Greater/Less than something
+  2. Greater/Less than something checks
 ```
   let a = 1
   let b = 2
@@ -68,7 +68,7 @@
       .lessThanOrEqualsTo(b)
   ```
   
-  ### Containing asserts
+  ### Contains asserts
 
 ```
 let string = "Alf, stop eat cats!"
@@ -88,14 +88,7 @@ assert("Array contains item")
 
 ### Soft Assertion usage
 
-1. In SetUp method set default continueAfterFailure value by method setDefaultContinueAfterFailure()
-
-```
-override func setUpWithError() throws {
-        self.continueAfterFailure = false
-    }
-```
-2. When you need to make assert with setDefaultContinueAfterFailure = true use this construction:
+When you need to make assert with `setDefaultContinueAfterFailure = true` use this construction:
 
 ```
 self.softAssertation {
